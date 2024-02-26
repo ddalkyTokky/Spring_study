@@ -4,7 +4,6 @@ import com.uzurotech.study.domain.Member;
 import com.uzurotech.study.domain.repository.MemberRepository;
 //import org.junit.Test;
 import jakarta.persistence.EntityManager;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -52,9 +51,9 @@ public class MemberServiceTest {
     @Test
     public void duplicate_member_exception() throws Exception {
         Member member = new Member();
-        member.setUsername("Lee");
+        member.setUsername("Soon");
         Member member2 = new Member();
-        member2.setUsername("Lee");
+        member2.setUsername("Soon");
 
         //when
         memberService.join(member);
