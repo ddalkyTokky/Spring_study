@@ -3,7 +3,7 @@
 
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/Desktop/study/DB/h2/jpashop
+    url: jdbc:h2:mem:test
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -11,7 +11,7 @@ spring:
   jpa:
     hibernate:
       #애플리케이션 실행시 모든 기존 테이블 삭제 및 재생성 명령
-      ddl-auto: create-drop # or create-drop 이 기본적인 셋팅이며, drop(기존) => create(기존) => drop(추가) 로 작동한다.
+      ddl-auto: create # or create-drop 이 기본적인 셋팅이며, drop(기존) => create(기존) => drop(추가) 로 작동한다.
     properties:
       hibernate:
         # 시스템out 으로 로그를 찍음.
