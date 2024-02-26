@@ -15,6 +15,8 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    // 중복 방지
+    @Column(unique = true)
     private String username;
 
     @Embedded
