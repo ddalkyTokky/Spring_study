@@ -1,8 +1,7 @@
-package com.uzurotech.study.domain.service;
+package com.uzurotech.study.service;
 
 import com.uzurotech.study.domain.Member;
-import com.uzurotech.study.domain.repository.MemberRepository;
-import lombok.AllArgsConstructor;
+import com.uzurotech.study.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,19 +15,18 @@ import java.util.List;
 // @AutoWired 와 달리, final만 생성자로 잡음.
 @RequiredArgsConstructor
 public class MemberService {
-
+//     필드 인젝션 외부에서 생성한 "클래스"가 아닌 "객체"를 주입한다.
+//     생성자
     private final MemberRepository memberRepository;
-    // 필드 인젝션 외부에서 생성한 "클래스"가 아닌 "객체"를 주입한다.
-    // 생성자
 
 //    @AllArgsConstructor 모든 필드에 대해서 아래 생성자들을 모두 만들어줌.
-    // @Autowired 어노테이션 없이도 자동 할당됨.
+//     @Autowired 어노테이션 없이도 자동 할당됨.
 //    private MemberService(MemberRepository memberRepository){
 //        this.memberRepository = memberRepository;
 //    }
-
-    // 회원 가입
-    // 얘만 (readOnly = false)
+//
+//     회원 가입
+//     얘만 (readOnly = false)
     @Transactional
     public Long join(Member member) {
         validateDuplicateMember(member); // 중복 회원 검증

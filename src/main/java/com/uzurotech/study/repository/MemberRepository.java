@@ -1,4 +1,4 @@
-package com.uzurotech.study.domain.repository;
+package com.uzurotech.study.repository;
 
 import com.uzurotech.study.domain.Member;
 import jakarta.persistence.EntityManager;
