@@ -1,12 +1,12 @@
-package com.uzurotech.study.domain.service;
+package com.uzurotech.study.service;
 
 import com.uzurotech.study.domain.Member;
 import com.uzurotech.study.repository.MemberRepository;
-//import org.junit.Test;
 import com.uzurotech.study.service.MemberService;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -50,6 +50,7 @@ public class MemberServiceTest {
 
     @Test
     public void duplicate_member_exception() throws Exception {
+        //given
         Member member = new Member();
         member.setUsername("Soon");
         Member member2 = new Member();

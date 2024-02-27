@@ -28,6 +28,7 @@ public abstract class Item {
     private List<Category> categories = new ArrayList<>();
 
     //==비지니스 로직==//
+
     //바깥에서 계산해서 Set하지 말고!!
     //반드시 해당 요소를 갖고있는 class또는 entity가 직접 계산하게 할것!!!
     public void addStock(int quantity){

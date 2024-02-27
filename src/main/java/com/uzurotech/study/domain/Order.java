@@ -1,8 +1,11 @@
 package com.uzurotech.study.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.ast.Or;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,6 +14,9 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter @Setter
+//생성자를 protected로 선언하는 것과 같은 효과를 발휘함.
+//생성 패턴을 한가지로 강제하는 효과가 있음.
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id @GeneratedValue
@@ -28,6 +34,7 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    // 또한, 이러한 CasCade는 매우 조심하여야 한다. 만약, Order가 아닌 다른 엔티티들도 OrderItem, Delivery등을 사용하는 또 다른 Owner가 된다면, 지양해야 한다.
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
@@ -39,7 +46,7 @@ public class Order {
 
     //===연관관게 메서드===//
     //위치는 핵심 컨트롤러가 하는게 좋음.//
-    // 양쪽 다 있으면 당연히 유지보수가 어려워 지겠죵?//
+    //양쪽 다 있으면 당연히 유지보수가 어려워 지겠죵?//
     public void setMember(Member member){
         this.member = member;
         member.getOrders().add(this);
@@ -53,5 +60,45 @@ public class Order {
     public void setDelivery(Delivery delivery){
         this.delivery = delivery;
         delivery.setOrder(this);
+    }
+
+    //==생성 메서드--//
+    // 상황에 따라서는 더 복잡해질 수도 있음.
+    // 주의 필요.
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems){
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for(OrderItem orderItem: orderItems){
+            order.addOrderItem(orderItem);
+        }
+        order.setStatus(OrderStatus.ORDER);
+        order.setOrderDate(LocalDateTime.now());
+        return order;
+    }
+
+    //==비지니스 로직==//
+    public void cancel(){
+        if(delivery.getStatus() == DeliveryStatus.COMP){
+            throw new IllegalStateException("Already Completed Delivery. Cannot cancel");
+        }
+
+        this.setStatus(OrderStatus.CANCEL);
+        for(OrderItem orderItem: this.getOrderItems()){
+            orderItem.cancel();
+        }
+    }
+
+    //==조회 로직==//
+    public int getTotalPrice(){
+//        int totalPrice = 0;
+//        for (OrderItem orderItem: this.orderItems){
+//            totalPrice += orderItem.getTotalPrice();
+//        }
+//        return totalPrice;
+        return this.orderItems
+                .stream()
+                .mapToInt(OrderItem::getTotalPrice)
+                .sum();
     }
 }
