@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/Desktop/Spring_study/DB/h2/jpashop
+#    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      # 애플리케이션 실행시 모든 기존 테이블 삭제 및 재생성 명령 create
+      # ddl-auto 에 대한 상세 설명 https://colabear754.tistory.com/136
+      # 절대 건드리지 마시오!!!!!!!!!!!!
+      ddl-auto: validate
+    properties:
+      hibernate:
+        # 시스템out 으로 로그를 찍음.
+        #show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    #모든 hibernate 로그를 남김.
+    org.hibernate.SQL: debug
+#    org.hibernate.type: trace

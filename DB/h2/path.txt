@@ -1,0 +1,2 @@
+localhost:8082
+jdbc:h2:tcp://localhost/~/Desktop/study/DB/h2/jpashop
