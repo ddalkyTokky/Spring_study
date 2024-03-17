@@ -2,7 +2,7 @@
 >[김영한의 스프링 부트와 JPA 실무 완전 정복 로드맵](https://www.inflearn.com/roadmaps/149)
 
 # _**수강하면서 생겼던 문제점들**_
-## _**package org.junit.runner does not exist**_
+## _**1. package org.junit.runner does not exist**_
 >[참고: gradle compileJava error: package org.junit does not exist](https://stackoverflow.com/questions/42677526/gradle-compilejava-error-package-org-junit-does-not-exist)
 
 Gradle 빌드 시 발생하는 오류임.
@@ -16,7 +16,7 @@ dependencies {
 }
 ```
 
-## _**Gradle complieJava error: package org.junit does not exist**_
+## _**2. Gradle complieJava error: package org.junit does not exist**_
 >[참고: 테스트 도중 에러 발생](https://www.inflearn.com/questions/15495/%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8F%84%EC%A4%91-%EC%97%90%EB%9F%AC-%EB%B0%9C%EC%83%9D)      
 >[참고: gradle compileJava error: package org.junit does not exist](https://stackoverflow.com/questions/42677526/gradle-compilejava-error-package-org-junit-does-not-exist)
 
@@ -28,7 +28,7 @@ Test 빌드시 Junit 4, 5 때문에 발생하는 문제
 import org.junit.jupiter.api.Test;
 ```
 
-## _**@Test(expected = ) 인식 안됨**_
+## _**3. @Test(expected = ) 인식 안됨**_
 >[참고: [Spring] JUnit5에서의 Exception 처리](https://dkswnkk.tistory.com/441)
 
 Junit4 에서 Junit5로 넘어가면서 해당 필드가 삭제되었다. (@Test는 여전히 존재함)
@@ -40,7 +40,7 @@ Assertions.assertThrows(IllegalStateException.class, () -> {
 });
 ```
 
-## _**javax.validation import 불가**_
+## _**4. javax.validation import 불가**_
 아래 구문을
 ```
 import javax.validation.Valid;
@@ -60,7 +60,7 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 종속성은 위 문장으로 고정.
 
 # _**수강전 알고있으면 도움되는 팁 or 추가설명**_
-## _**Spring Injection 과 @AutoWired**_
+## _**1. Spring Injection 과 @AutoWired**_
 >[참고: [Spring] 의존성 주입(Dependency Injection, DI)이란? 및 Spring이 의존성 주입을 지원하는 이유](https://mangkyu.tistory.com/150)
 
 위 링크들의 양이 방대해서 직접 읽어보는 것을 추천한다..
@@ -76,7 +76,7 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 병합은 merge함수를 써서, 변경 감지용 코드를 대체하는 역할이라고 이해하면 편하다.
 병합 (merge 함수)가 반환하는 객체는 영속성 엔티티이다. 파라미터로 전달된 엔티티는 여전히 준영속이다!!
 또한 merge는 모든 필드를 강제로 변환한다. 선택할 수 없다. 따라서, 전달하지 않은 필드에 대해서는 값을 유지하는 것이 아닌, null로 초기화해버린다!!
-## _**@DiscriminatorColumn(name = "dtype")**_
+## _**2. @DiscriminatorColumn(name = "dtype")**_
 >[참고: [JPA] 상속관계 매핑 전략(@Inheritance, @DiscriminatorColumn)](https://ict-nroo.tistory.com/128)
 
 객체와 달리 테이블들은 상속관계를 정의할 수 없다.
