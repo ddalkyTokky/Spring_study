@@ -62,9 +62,11 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 # _**수강전 알고있으면 도움되는 팁 or 추가설명**_
 ## _**Spring Injection 과 @AutoWired**_
 >[참고: [Spring] 의존성 주입(Dependency Injection, DI)이란? 및 Spring이 의존성 주입을 지원하는 이유](https://mangkyu.tistory.com/150)
-위 링크들의 양이 방대해서 직접 읽어보는 것을 추천한다.. 링크 문제시 문의 이순용
+
+위 링크들의 양이 방대해서 직접 읽어보는 것을 추천한다..
 준영속 엔티티 와 변경 감지, 병합에 대한 이해
->[참고: Section7 변경 감지와 병함 (merge)] https://www.inflearn.com/course/lecture?courseSlug=%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1&unitId=24309&tab=curriculum)
+>[참고: Section7 변경 감지와 병함 (merge)] (https://www.inflearn.com/course/lecture?courseSlug=%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1&unitId=24309&tab=curriculum)
+
 준영속 엔티티란 영속성 컨텍스트가 더는 관리하지 않는 엔티티이다.
 이를 해결하기 위한 방법에는 두가지가 있다.
 1. 변경 감지.
@@ -74,17 +76,15 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 병합은 merge함수를 써서, 변경 감지용 코드를 대체하는 역할이라고 이해하면 편하다.
 병합 (merge 함수)가 반환하는 객체는 영속성 엔티티이다. 파라미터로 전달된 엔티티는 여전히 준영속이다!!
 또한 merge는 모든 필드를 강제로 변환한다. 선택할 수 없다. 따라서, 전달하지 않은 필드에 대해서는 값을 유지하는 것이 아닌, null로 초기화해버린다!!
-@DiscriminatorColumn(name = "dtype")
-참고: https://ict-nroo.tistory.com/128
+## _**@DiscriminatorColumn(name = "dtype")**_
+>[참고: [JPA] 상속관계 매핑 전략(@Inheritance, @DiscriminatorColumn)](https://ict-nroo.tistory.com/128)
 객체와 달리 테이블들은 상속관계를 정의할 수 없다.
 따라서 아래 세 젼략을 사용하여 맵핑하고, 그 부모-자식 관계를 명확히 한다.
 1. 조인 전략 (JOINED_TABLE)
 2. 단일 테이블 전략 (SINGLE_TABLE)
 3. 모든 부모 클래스의 컬럼을 자식으로 내리기 (TABLE_PER_CLASS)
-수강평 및 개인평 (순용)
-참고: https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-
-1#reviews
 
+# _**수강평 및 개인평**_
 입문용 난이도로 아주 적절한 난이도.
 Computer Science 관련 전공 지식이 충분하고, 적절한 경험이 있는 개발자라면 쉽게 이해할 수 있는 난이도이다.
 거기에 더해, 깔끔한 설명과 https://www.inflearn.com/course/ORM-JPA-Basic 을 듣지 않아도 어느 정도 유추가 되는 자세한 설명이 가장 큰 장점이다.
