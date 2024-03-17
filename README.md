@@ -78,6 +78,7 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 또한 merge는 모든 필드를 강제로 변환한다. 선택할 수 없다. 따라서, 전달하지 않은 필드에 대해서는 값을 유지하는 것이 아닌, null로 초기화해버린다!!
 ## _**@DiscriminatorColumn(name = "dtype")**_
 >[참고: [JPA] 상속관계 매핑 전략(@Inheritance, @DiscriminatorColumn)](https://ict-nroo.tistory.com/128)
+
 객체와 달리 테이블들은 상속관계를 정의할 수 없다.
 따라서 아래 세 젼략을 사용하여 맵핑하고, 그 부모-자식 관계를 명확히 한다.
 1. 조인 전략 (JOINED_TABLE)
