@@ -3,7 +3,7 @@
 
 # _**수강하면서 생겼던 문제점들**_
 ## _**package org.junit.runner does not exist**_
->[참고](https://stackoverflow.com/questions/42677526/gradle-compilejava-error-package-org-junit-does-not-exist)
+>[참고: gradle compileJava error: package org.junit does not exist](https://stackoverflow.com/questions/42677526/gradle-compilejava-error-package-org-junit-does-not-exist)
 
 Gradle 빌드 시 발생하는 오류임.
 IntelliJ 빌드 시에는 발생하지 않음.
