@@ -1,2 +1,2 @@
 # $\bf{\color{#00A3FF}실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발}$
->[naver](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1)
+>[김영한의 스프링 부트와 JPA 실무 완전 정복 로드맵](https://www.inflearn.com/roadmaps/149)
