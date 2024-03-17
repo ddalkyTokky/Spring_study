@@ -88,5 +88,5 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 # _**수강평 및 개인평**_
 입문용 난이도로 아주 적절한 난이도.
 Computer Science 관련 전공 지식이 충분하고, 적절한 경험이 있는 개발자라면 쉽게 이해할 수 있는 난이도이다.
-거기에 더해, 깔끔한 설명과 https://www.inflearn.com/course/ORM-JPA-Basic 을 듣지 않아도 어느 정도 유추가 되는 자세한 설명이 가장 큰 장점이다.
-다만, 본인은 https://www.inflearn.com/course/ORM-JPA-Basic 을 듣지 않아, 정확한 비교가 아닌 추측임에 유의하기 바란다
+거기에 더해, 깔끔한 설명과 [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic) 을 듣지 않아도 어느 정도 유추가 되는 자세한 설명이 가장 큰 장점이다.
+다만, 본인은 [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic) 을 듣지 않아, 정확한 비교가 아닌 추측임에 유의하기 바란다
