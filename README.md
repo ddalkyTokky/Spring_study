@@ -9,7 +9,9 @@ Gradle 빌드 시 발생하는 오류임.
 IntelliJ 빌드 시에는 발생하지 않음.
 그러나, Gradle 빌드시에도 발생하지 않게 하려면, 아래 내용을 build.gradle에 추가하면 됨.
 
->```dependencies {      
-> testImplementation 'junit:junit:4.12'      
-> implementation 'junit:junit:4.12'      
->}  ```    
+```
+dependencies {      
+ testImplementation 'junit:junit:4.12'      
+ implementation 'junit:junit:4.12'      
+}
+```
